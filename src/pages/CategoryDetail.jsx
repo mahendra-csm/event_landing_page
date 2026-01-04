@@ -46,25 +46,25 @@ const CategoryDetail = () => {
                 <link rel="canonical" href={`/conferences/${slug}`} />
             </Helmet>
 
-            <main className="container" style={{ paddingTop: '3rem' }}>
+            <main className="container" style={{ paddingTop: '1.5rem' }}>
                 <Link
                     to="/"
                     className="back-link"
                     style={{
                         display: 'inline-flex',
                         alignItems: 'center',
-                        gap: '8px',
+                        gap: '6px',
                         background: 'linear-gradient(135deg, #475569, #334155)',
                         color: 'white',
-                        padding: '0.75rem 1.5rem',
-                        borderRadius: '12px',
+                        padding: '0.5rem 1rem',
+                        borderRadius: '10px',
                         fontWeight: '600',
-                        fontSize: '0.95rem',
+                        fontSize: '0.85rem',
                         textDecoration: 'none',
                         boxShadow: '0 4px 15px rgba(51, 65, 85, 0.3)',
                         border: 'none',
                         transition: 'all 0.2s ease',
-                        marginBottom: '2.5rem'
+                        marginBottom: '1.25rem'
                     }}
                     onMouseEnter={(e) => {
                         e.currentTarget.style.boxShadow = '0 6px 25px rgba(51, 65, 85, 0.4)';
@@ -83,42 +83,42 @@ const CategoryDetail = () => {
                     Back to all categories
                 </Link>
                 <header style={{
-                    marginBottom: '3rem',
-                    paddingBottom: '2rem',
-                    borderBottom: `3px solid ${themeColor}20`
+                    marginBottom: '1.5rem',
+                    paddingBottom: '1rem',
+                    borderBottom: `2px solid ${themeColor}20`
                 }}>
                     <h1 style={{
-                        fontSize: '3rem',
+                        fontSize: '2.25rem',
                         fontWeight: '800',
                         background: `linear-gradient(135deg, ${themeColor} 0%, ${themeColor}dd 100%)`,
                         WebkitBackgroundClip: 'text',
                         WebkitTextFillColor: 'transparent',
                         backgroundClip: 'text',
-                        marginBottom: '0.75rem',
+                        marginBottom: '0.5rem',
                         letterSpacing: '-0.02em'
                     }}>
                         {title}
                     </h1>
                     <p className="subtitle" style={{
-                        fontSize: '1.1rem',
+                        fontSize: '0.95rem',
                         color: '#64748b',
                         fontWeight: '500',
                         display: 'inline-flex',
                         alignItems: 'center',
-                        gap: '0.5rem',
+                        gap: '0.4rem',
                         background: `${themeColor}10`,
-                        padding: '0.5rem 1rem',
+                        padding: '0.35rem 0.85rem',
                         borderRadius: '99px',
                         border: `1px solid ${themeColor}20`
                     }}>
                         <span style={{
-                            width: '8px',
-                            height: '8px',
+                            width: '6px',
+                            height: '6px',
                             background: themeColor,
                             borderRadius: '50%',
                             display: 'inline-block'
                         }}></span>
-                        {count} events available
+                        {count} events and more
                     </p>
                 </header>
 

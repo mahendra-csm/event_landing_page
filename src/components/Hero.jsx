@@ -10,8 +10,9 @@ const Hero = () => {
                 <div className="hero-stats">
                     <div className="stat-item">
                         <span className="stat-value">300+</span>
-                        <span className="stat-label">Upcoming Events</span>
+                        <span className="stat-label">International Conferences</span>
                     </div>
+                    <div className="stat-divider"></div>
                     <div className="stat-item">
                         <span className="stat-value">Global</span>
                         <span className="stat-label">Reach</span>

@@ -22,17 +22,17 @@ const iconMap = {
 };
 
 const colorMap = {
-    'business-economics': '#0284c7', // Deep Sky
-    'health-medical-sciences': '#dc2626', // Deep Red
-    'engineering-technology': '#d97706', // Deep Amber
-    'education': '#2563eb', // Deep Royal
-    'physical-life-sciences': '#059669', // Deep Emerald
-    'social-science-humanities': '#7c3aed', // Deep Violet
-    'agriculture-food-sciences': '#65a30d', // Deep Lime
-    'interdisciplinary-emerging-fields': '#db2777', // Deep Pink
-    'mathematics-data-science': '#4f46e5', // Deep Indigo
-    'arts-culture-communication': '#ea580c', // Deep Orange
-    'sports-physical-education': '#0d9488', // Deep Teal
+    'business-economics': '#0066CC', // Vibrant Royal Blue - Professional & Dynamic
+    'health-medical-sciences': '#E91E63', // Hot Pink - Modern Medical
+    'engineering-technology': '#FF6B35', // Vibrant Orange - Tech Energy
+    'education': '#7C3AED', // Vivid Purple - Knowledge & Innovation
+    'physical-life-sciences': '#10B981', // Bright Emerald - Life & Growth
+    'social-science-humanities': '#8B5CF6', // Rich Violet - Culture & Creativity
+    'agriculture-food-sciences': '#84CC16', // Lime Green - Fresh & Natural
+    'interdisciplinary-emerging-fields': '#EC4899', // Bright Magenta - Innovation
+    'mathematics-data-science': '#3B82F6', // Electric Blue - Logic & Tech
+    'arts-culture-communication': '#F59E0B', // Golden Amber - Creative Expression
+    'sports-physical-education': '#14B8A6', // Vibrant Cyan - Energy & Vitality
 };
 
 const CategoryCard = ({ id, title, events = [] }) => {
@@ -48,47 +48,49 @@ const CategoryCard = ({ id, title, events = [] }) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 style={{
-                    // Vibrant Gradient Background
-                    background: `linear-gradient(135deg, ${themeColor}, ${themeColor}dd)`,
-                    boxShadow: `0 20px 40px -15px ${themeColor}60`, // Stronger colored shadow
+                    // Vibrant Premium Gradient
+                    background: `linear-gradient(135deg, ${themeColor} 0%, ${themeColor}f0 60%, ${themeColor}e8 100%)`,
+                    boxShadow: `0 10px 25px -8px ${themeColor}70`,
                     position: 'relative',
                     overflow: 'hidden',
-                    border: 'none'
+                    border: `1px solid ${themeColor}40`,
+                    backdropFilter: 'blur(10px)'
                 }}
             >
-                {/* Decorative White Glow Blob */}
+                {/* Subtle Glow Effect */}
                 <div
                     style={{
                         position: 'absolute',
-                        top: '-60px',
-                        right: '-60px',
-                        width: '200px',
-                        height: '200px',
+                        top: '-40px',
+                        right: '-40px',
+                        width: '120px',
+                        height: '120px',
                         borderRadius: '50%',
-                        background: 'white',
-                        opacity: '0.1',
-                        filter: 'blur(60px)',
+                        background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 65%)',
+                        opacity: '0.6',
+                        filter: 'blur(30px)',
                         zIndex: 0
                     }}
                 />
 
                 <div className="category-content-wrapper" style={{ height: '100%', display: 'flex', flexDirection: 'column', position: 'relative', zIndex: 1 }}>
 
-                    {/* Floating Icon Bubble - White Glass */}
+                    {/* Premium Icon Bubble with Golden Accent */}
                     <div
                         className="category-icon-wrapper"
                         style={{
                             color: themeColor,
-                            backgroundColor: 'white', // Pure white bg for icon
-                            width: '64px',
-                            height: '64px',
-                            borderRadius: '18px',
+                            background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)', // Subtle gradient for depth
+                            width: '44px',
+                            height: '44px',
+                            borderRadius: '12px',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            fontSize: '1.75rem',
-                            marginBottom: '1.5rem',
-                            boxShadow: `0 10px 20px -5px rgba(0,0,0,0.2)`
+                            fontSize: '1.25rem',
+                            marginBottom: '0.5rem',
+                            boxShadow: `0 8px 16px -6px rgba(0,0,0,0.2), inset 0 1px 2px rgba(255,255,255,0.5)`,
+                            border: '1px solid rgba(255,255,255,0.3)'
                         }}
                     >
                         {icon}
@@ -96,38 +98,41 @@ const CategoryCard = ({ id, title, events = [] }) => {
 
                     <div style={{ flex: 1 }}>
                         <h3 className="category-block-title" style={{
-                            color: 'white',
-                            fontSize: '1.35rem',
+                            color: '#ffffff',
+                            fontSize: '1rem',
                             fontWeight: '700',
-                            marginBottom: '0.5rem',
+                            marginBottom: '0.25rem',
                             lineHeight: '1.3',
-                            textShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                            textShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                            letterSpacing: '-0.02em'
                         }}>
                             {title}
                         </h3>
-                        <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '0.95rem', fontWeight: '500' }}>
+                        <p style={{ color: 'rgba(255,255,255,0.95)', fontSize: '0.75rem', fontWeight: '500', letterSpacing: '0.01em', margin: 0 }}>
                             World-class events
                         </p>
                     </div>
 
                     <div className="category-meta" style={{
-                        marginTop: '2rem',
+                        marginTop: '0.75rem',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'space-between',
-                        borderTop: `1px solid rgba(255,255,255,0.2)`,
-                        paddingTop: '1.25rem'
+                        borderTop: `1px solid rgba(255,255,255,0.25)`,
+                        paddingTop: '0.75rem'
                     }}>
                         <span
                             className="category-count"
                             style={{
                                 color: themeColor,
                                 fontWeight: '700',
-                                background: 'white', // Creating a clean pill
-                                padding: '0.35rem 0.85rem',
+                                background: 'linear-gradient(135deg, #ffffff 0%, #fafafa 100%)', // Premium gradient pill
+                                padding: '0.25rem 0.6rem',
                                 borderRadius: '99px',
-                                fontSize: '0.8rem',
-                                boxShadow: '0 2px 5px rgba(0,0,0,0.1)'
+                                fontSize: '0.7rem',
+                                boxShadow: '0 4px 8px rgba(0,0,0,0.15), inset 0 1px 2px rgba(255,255,255,0.5)',
+                                border: '1px solid rgba(255,255,255,0.4)',
+                                letterSpacing: '0.02em'
                             }}
                         >
                             {events.length} Events
@@ -135,11 +140,11 @@ const CategoryCard = ({ id, title, events = [] }) => {
 
                         <motion.div
                             className="category-action"
-                            style={{ color: 'white', display: 'flex', alignItems: 'center', gap: '6px', fontWeight: '600' }}
+                            style={{ color: '#ffffff', display: 'flex', alignItems: 'center', gap: '4px', fontWeight: '600', letterSpacing: '0.01em', fontSize: '0.75rem' }}
                             whileHover={{ x: 3 }}
                         >
                             <span>Explore</span>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
                         </motion.div>

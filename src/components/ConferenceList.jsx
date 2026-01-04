@@ -12,9 +12,20 @@ const ConferenceList = ({ events, themeColor }) => {
 
     return (
         <div className="conference-list">
-            {events.map((event, index) => (
-                <ConferenceCard key={`${index}-${event.substring(0, 10)}`} title={event} themeColor={themeColor} />
-            ))}
+            {events.map((event, index) => {
+                const isObject = event && typeof event === 'object';
+                const title = isObject ? event.title : event;
+                const link = isObject ? event.link : undefined;
+
+                return (
+                    <ConferenceCard
+                        key={`${index}-${title.substring(0, 10)}`}
+                        title={title}
+                        link={link}
+                        themeColor={themeColor}
+                    />
+                );
+            })}
         </div>
     );
 };

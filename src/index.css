@@ -317,7 +317,7 @@ h6 {
 
 .conference-row {
     display: grid;
-    grid-template-columns: 70px 1fr auto;
+    grid-template-columns: 80px 1fr auto;
     align-items: center;
     gap: 1rem;
     background: white;
@@ -351,6 +351,7 @@ h6 {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    white-space: nowrap;
 }
 
 .conf-year {

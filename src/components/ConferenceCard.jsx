@@ -32,8 +32,10 @@ const ConferenceCard = ({ title, themeColor = '#2563eb', link }) => {
         return { day: '', month: '', year: '2026', exact: false };
     }, [title]);
 
-    // Clean title for display (optional: remove the date code from the end if desired, but keeping it full is safer for now)
-    // const displayTitle = title.replace(/-?\s?IC-.*$/, ''); 
+    // Clean title by removing the date prefix (e.g., "18-Mar-26 – " or "4-Feb-26 – ")
+    const displayTitle = useMemo(() => {
+        return title.replace(/^\d{1,2}-(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)-\d{2,4}\s*[–-]\s*/i, '');
+    }, [title]);
 
     return (
         <motion.div
@@ -69,7 +71,7 @@ const ConferenceCard = ({ title, themeColor = '#2563eb', link }) => {
             </div>
 
             <div className="conf-content">
-                <h3 className="conf-title">{title}</h3>
+                <h3 className="conf-title">{displayTitle}</h3>
                 <div className="conf-meta">
                     <span className="conf-tag">International</span>
                     <span className="conf-tag">Conference</span>
